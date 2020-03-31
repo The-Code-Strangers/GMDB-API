@@ -18,5 +18,8 @@ public class MovieService {
 	public List<Movie> getEntries() {
 		return movieRepository.findAll();
 	}
-
+	//For testing the app
+	//Movie movie = new Movie();
+	//movie.setTitle("Welcome");
+	//movieRepository.save(movie);
 }
