@@ -1,4 +1,4 @@
-package net.thecodestrangers.GalvanizeMovieDatabaseAPI.entities;
+package net.thecodestrangers.GalvanizeMovieDatabaseAPI.persistance.entities;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
