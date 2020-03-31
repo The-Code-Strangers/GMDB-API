@@ -11,5 +11,4 @@ public class GalvanizeMovieDatabaseApiApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(GalvanizeMovieDatabaseApiApplication.class, args);
 	}
-
 }
