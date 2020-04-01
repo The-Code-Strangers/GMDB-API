@@ -23,7 +23,7 @@ import net.thecodestrangers.GalvanizeMovieDatabaseAPI.services.MovieService;
 
 
 @WebMvcTest
-public class controllerTest {
+public class movieControllerTest {
 
     @Autowired
     private MockMvc mvc;
