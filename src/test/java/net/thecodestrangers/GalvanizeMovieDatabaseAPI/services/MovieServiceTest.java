@@ -26,6 +26,7 @@ public class MovieServiceTest {
     @MockBean
     MovieRepository mockMovieRepository;
 
+
     @Test
     void getEntriesReturnsEmptyList() {
         List<Movie> list = new ArrayList<>();
