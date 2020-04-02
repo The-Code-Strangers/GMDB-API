@@ -24,24 +24,5 @@ public class ReviewController {
     public List<Review> getReviews(@RequestParam(required = false) Long movieId) {
         return reviewService.getEntries(movieId);
     }
- 
-    
-
-        // We can configure our @RequestParam to be optional, though, with the required attribute:
-
-        // @GetMapping("/api/foos")
-        // @ResponseBody
-        // public String getFoos(@RequestParam(required = false) String id) { 
-        //     return "ID: " + id;
-        // }
-        // In this case, both:
-        
-        
-        // http://localhost:8080/api/foos?id=abc
-        // ----
-        // ID: abc
 
 }
-
-
-    
