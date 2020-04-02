@@ -22,14 +22,14 @@ import net.thecodestrangers.GalvanizeMovieDatabaseAPI.services.MovieService;
 
 
 
-@WebMvcTest
-public class controllerTest {
+@WebMvcTest(MovieController.class)
+public class MovieControllerTest {
 
     @Autowired
     private MockMvc mvc;
 
     @MockBean
-    MovieService movieServiceMock;
+    MovieService mockMovieService;
 
     @Test
     void shouldShowAllMovies() throws Exception {
@@ -39,12 +39,12 @@ public class controllerTest {
         movie.setReleaseYear(2020);
         movieList.add(movie);
         movieList.add(new Movie());
-        when(movieServiceMock.getEntries()).thenReturn(movieList);
+        when(mockMovieService.getEntries()).thenReturn(movieList);
 
         mvc.perform(get("/movies")).andExpect(status().isOk())
                 .andExpect(content().contentType(MediaType.APPLICATION_JSON)).andExpect(jsonPath("$").isArray())
                 .andExpect(jsonPath("$", hasSize(2)));// From Hamcrest
-        verify(movieServiceMock).getEntries();
+        verify(mockMovieService).getEntries();
 
     }
 

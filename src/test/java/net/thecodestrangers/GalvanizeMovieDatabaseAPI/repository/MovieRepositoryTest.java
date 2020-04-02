@@ -2,8 +2,6 @@ package net.thecodestrangers.GalvanizeMovieDatabaseAPI.repository;
 
 import java.util.Optional;
 
-import javax.transaction.Transactional;
-
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,7 +14,6 @@ import net.thecodestrangers.GalvanizeMovieDatabaseAPI.persistance.repositories.M
  * MovieRepositoryTest
  */
 @DataJpaTest
-@Transactional
 public class MovieRepositoryTest {
 
     @Autowired

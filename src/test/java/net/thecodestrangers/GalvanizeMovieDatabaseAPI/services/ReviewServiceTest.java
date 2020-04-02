@@ -12,28 +12,25 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 
-import net.thecodestrangers.GalvanizeMovieDatabaseAPI.persistance.entities.Movie;
-import net.thecodestrangers.GalvanizeMovieDatabaseAPI.persistance.repositories.MovieRepository;
-/**
- * MovieServiceTest
- */
+import net.thecodestrangers.GalvanizeMovieDatabaseAPI.persistance.entities.Review;
+import net.thecodestrangers.GalvanizeMovieDatabaseAPI.persistance.repositories.ReviewRepository;
+
 @SpringBootTest
-public class MovieServiceTest {
+public class ReviewServiceTest {
 
     @Autowired
-    MovieService movieService;
+    ReviewService reviewService;
 
     @MockBean
-    MovieRepository mockMovieRepository;
-
+    ReviewRepository mockReviewRepository;
 
     @Test
     void getEntriesReturnsEmptyList() {
-        List<Movie> list = new ArrayList<>();
-        when(mockMovieRepository.findAll()).thenReturn(list);
-
-        Assertions.assertEquals(movieService.getEntries(),list);
-        verify(mockMovieRepository).findAll();
+        List<Review> list = new ArrayList<>();
+        when(mockReviewRepository.findAll()).thenReturn(list);
+        
+        Assertions.assertEquals(reviewService.getEntries(), list);
+        verify(mockReviewRepository).findAll();
     }
-    
+
 }

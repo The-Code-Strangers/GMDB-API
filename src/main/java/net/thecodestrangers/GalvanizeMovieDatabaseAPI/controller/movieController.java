@@ -13,7 +13,7 @@ import net.thecodestrangers.GalvanizeMovieDatabaseAPI.services.MovieService;
  * movieController
  */
 @RestController
-public class movieController {
+public class MovieController {
 
     @Autowired
     private MovieService movieService;
