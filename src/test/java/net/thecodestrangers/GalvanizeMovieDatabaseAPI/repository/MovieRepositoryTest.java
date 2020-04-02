@@ -6,6 +6,7 @@ import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
+import org.springframework.test.context.ActiveProfiles;
 
 import net.thecodestrangers.GalvanizeMovieDatabaseAPI.persistance.entities.Movie;
 import net.thecodestrangers.GalvanizeMovieDatabaseAPI.persistance.repositories.MovieRepository;
@@ -13,6 +14,7 @@ import net.thecodestrangers.GalvanizeMovieDatabaseAPI.persistance.repositories.M
 /**
  * MovieRepositoryTest
  */
+@ActiveProfiles(profiles = "test")
 @DataJpaTest
 public class MovieRepositoryTest {
 
