@@ -17,7 +17,5 @@ import lombok.Data;
     private Long userId;
     private String headLine;
     private String content;
-    private int rating;
-
-    
+    private int rating; 
 }
