@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import net.thecodestrangers.GalvanizeMovieDatabaseAPI.persistance.entities.Review;
@@ -19,11 +20,27 @@ public class ReviewController {
     @Autowired
     private ReviewService reviewService;
 
-    @GetMapping(value = "/reviews")
-    public List<Review> getReviews() {
-        return reviewService.getEntries();
+    @GetMapping("/reviews")
+    public List<Review> getReviews(@RequestParam(required = false) Long movieId) {
+        return reviewService.getEntries(movieId);
     }
+ 
     
+
+        // We can configure our @RequestParam to be optional, though, with the required attribute:
+
+        // @GetMapping("/api/foos")
+        // @ResponseBody
+        // public String getFoos(@RequestParam(required = false) String id) { 
+        //     return "ID: " + id;
+        // }
+        // In this case, both:
+        
+        
+        // http://localhost:8080/api/foos?id=abc
+        // ----
+        // ID: abc
+
 }
 
 

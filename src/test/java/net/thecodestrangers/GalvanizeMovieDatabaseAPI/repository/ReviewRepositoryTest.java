@@ -1,5 +1,6 @@
 package net.thecodestrangers.GalvanizeMovieDatabaseAPI.repository;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.assertj.core.api.Assertions;
@@ -27,5 +28,18 @@ public class ReviewRepositoryTest {
         Assertions.assertThat(persistedResult.get().getHeadLine()).isEqualTo("headline");
     }
 
+    @Test
+    public void canRetriveReviewsByMovieId() {
 
+        Long[] movieIdArray = {1L, 2L, 1L};
+
+        for (Long movieId : movieIdArray) {
+            Review review = new Review();
+            review.setMovieId(movieId);
+            reviewRepository.save(review);
+        }
+
+        List<Review> filteredResults = reviewRepository.findAllByMovieId(1L);
+        Assertions.assertThat(filteredResults.size()).isEqualTo(2);
+    }
 }

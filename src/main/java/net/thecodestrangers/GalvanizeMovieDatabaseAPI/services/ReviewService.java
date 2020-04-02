@@ -18,4 +18,9 @@ public class ReviewService {
 		return reviewRepository.findAll();
 	}
 
+	public List<Review> getEntries(Long movieId) {
+		if(movieId == null) return getEntries();
+		return reviewRepository.findAllByMovieId(movieId);
+	}
+
 }
