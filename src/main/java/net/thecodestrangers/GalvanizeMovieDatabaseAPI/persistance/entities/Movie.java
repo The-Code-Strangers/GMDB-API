@@ -1,6 +1,8 @@
 package net.thecodestrangers.GalvanizeMovieDatabaseAPI.persistance.entities;
 
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -14,6 +16,7 @@ public class Movie {
 
     private String title;
     private int releaseYear; 
+    @Enumerated(EnumType.STRING)
     private Genre genre;
     private int runtimeInMinutes;
     private int rating;
