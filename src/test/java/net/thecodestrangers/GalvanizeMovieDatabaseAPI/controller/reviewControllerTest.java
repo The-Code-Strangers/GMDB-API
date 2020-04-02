@@ -39,30 +39,11 @@ public class ReviewControllerTest {
         reviewList.add(review);
         reviewList.add(new Review());
     
-        when(mockReviewService.getEntries(null)).thenReturn(reviewList);
+        when(mockReviewService.getEntries()).thenReturn(reviewList);
         mvc.perform(get("/reviews")).andExpect(status().isOk())
                 .andExpect(content().contentType(MediaType.APPLICATION_JSON)).andExpect(jsonPath("$").isArray())
                 .andExpect(jsonPath("$", hasSize(2)));// From Hamcrest
-        verify(mockReviewService).getEntries(null);
+        verify(mockReviewService).getEntries();
     }
 
-
-    @Test
-    void shouldShowReviewsWithMovieId() throws Exception {
-        List<Review> filteredReviewList = new ArrayList<>();
-
-        Long[] movieIdArray = {1L, 1L};
- 
-        for (Long movieId : movieIdArray) {
-            Review review = new Review();
-            review.setMovieId(movieId);
-            filteredReviewList.add(review);
-        }
-    
-        when(mockReviewService.getEntries(1L)).thenReturn(filteredReviewList);
-        mvc.perform(get("/reviews?movieId=1")).andExpect(status().isOk())
-                .andExpect(content().contentType(MediaType.APPLICATION_JSON)).andExpect(jsonPath("$").isArray())
-                .andExpect(jsonPath("$", hasSize(2)));// From Hamcrest
-        verify(mockReviewService).getEntries(1L);
-    }
 }
