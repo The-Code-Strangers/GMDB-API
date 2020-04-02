@@ -19,7 +19,6 @@ import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
 
 import net.thecodestrangers.GalvanizeMovieDatabaseAPI.persistance.entities.Review;
-import net.thecodestrangers.GalvanizeMovieDatabaseAPI.services.MovieService;
 import net.thecodestrangers.GalvanizeMovieDatabaseAPI.services.ReviewService;
 
 @WebMvcTest(ReviewController.class)
